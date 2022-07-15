@@ -259,6 +259,12 @@
         border-right: 1px solid #8e8e8e;
         display: inline;
     }
+    .form-control{
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: padding: 0.375rem 0.75rem;;
+        border: 1px solid #ced4da;
+        font-size: 1rem;
+    }
 </style>
 <footer class="footer">
     <div class="footer-text">

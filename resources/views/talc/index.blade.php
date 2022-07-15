@@ -62,6 +62,10 @@
                         <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone" required value="">
                     </div>
                     <div class="col-12 mb-10 form-group">
+                        <input type="text" name="confirmPhone" id="confirmPhone" class="form-control" placeholder="Confirm Phone" required value="">
+                        <small class="help-block" data-fv-validator="match" data-fv-for="confirmPhone" data-fv-result="INVALID" style="display: none;">Phone numbers do not match!</small>
+                    </div>
+                    <div class="col-12 mb-10 form-group">
                         <input type="text" name="address" id="address" class="form-control" placeholder="Address" required value="">
                     </div>
                     <div class="col-12 mb-10 form-group">
@@ -386,6 +390,17 @@ $(function(){
                 }
             },
             phone: {
+                validators: {
+                    notEmpty: {
+                        message: 'The phone number is required.'
+                    },
+                    regexp: {
+                        regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
+                        message: 'The input is not a valid phone number.'
+                    }
+                }
+            },
+            confirmPhone: {
                 validators: {
                     notEmpty: {
                         message: 'The phone number is required.'

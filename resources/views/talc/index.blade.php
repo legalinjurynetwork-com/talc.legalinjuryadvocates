@@ -410,7 +410,7 @@ $(function(){
                         message: 'The input is not a valid phone number.'
                     },
                     identical: {
-                        field: '[name="phone"]',
+                        field: 'phone',
                         message: 'Phone numbers do not match!'
                     }
                 }

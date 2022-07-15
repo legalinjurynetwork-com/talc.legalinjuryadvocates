@@ -63,7 +63,6 @@
                     </div>
                     <div class="col-12 mb-10 form-group">
                         <input type="text" name="confirmPhone" id="confirmPhone" class="form-control" placeholder="Confirm Phone" required value="">
-                        <small class="help-block" data-fv-validator="match" data-fv-for="confirmPhone" data-fv-result="INVALID" style="display: none;">Phone numbers do not match!</small>
                     </div>
                     <div class="col-12 mb-10 form-group">
                         <input type="text" name="address" id="address" class="form-control" placeholder="Address" required value="">
@@ -325,6 +324,7 @@ $(function(){
     });
 
     $("input#phone").inputmask('(999)-999-9999');
+    $("input#confirmPhone").inputmask('(999)-999-9999');
 
     $('form.claim-form').formValidation({
         framework: 'bootstrap',
@@ -408,6 +408,12 @@ $(function(){
                     regexp: {
                         regexp: /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/,
                         message: 'The input is not a valid phone number.'
+                    },
+                    identical: {
+                        compare: function () {
+                            return form.querySelector('[name="phone"]').value;
+                        },
+                        message: 'Phone numbers do not match!',
                     }
                 }
             },

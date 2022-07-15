@@ -410,10 +410,8 @@ $(function(){
                         message: 'The input is not a valid phone number.'
                     },
                     identical: {
-                        compare: function () {
-                            return document.querySelector('[name="phone"]').value;
-                        },
-                        message: 'Phone numbers do not match!',
+                        field: '[name="phone"]',
+                        message: 'Phone numbers do not match!'
                     }
                 }
             },

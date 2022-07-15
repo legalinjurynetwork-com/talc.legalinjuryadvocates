@@ -411,7 +411,7 @@ $(function(){
                     },
                     identical: {
                         compare: function () {
-                            return form.querySelector('[name="phone"]').value;
+                            return document.querySelector('[name="phone"]').value;
                         },
                         message: 'Phone numbers do not match!',
                     }

@@ -60,7 +60,7 @@ Route::group(['prefix' => '/telc'], function () {
         $cid = Session::get('cid');
 
         $lpCampaignId  = '62be153ed1f39';
-        $lpCampaignKey = 'Wrdt7MPfjbF9pLxhKgC';
+        $lpCampaignKey = 'qQKr7CPtRD4MHzvmhYTX';
 
         $postData = [
             'lp_request_id'   => (!empty($cid)) ? $cid : $request->get('req_id'),

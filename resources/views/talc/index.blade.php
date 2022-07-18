@@ -64,89 +64,89 @@
                     <div class="col-12 mb-10 form-group">
                         <input type="text" name="confirmPhone" id="confirmPhone" class="form-control" placeholder="Confirm Phone" required value="">
                     </div>
-                    <div class="col-12 mb-10 form-group">
+                    <!--<div class="col-12 mb-10 form-group">
                         <input type="text" name="address" id="address" class="form-control" placeholder="Address" required value="">
                     </div>
                     <div class="col-12 mb-10 form-group">
                         <input type="text" name="city" id="city" class="form-control" placeholder="City" required value="">
                     </div>
                     <div class="col-12 mb-10 form-group">
-                            <select class="form-control" required id="state" name="state">
-                                <option value="">Select State</option>
-                                <option value="AL">Alabama</option>
-                                <option value="AK">Alaska</option>
-                                <option value="AZ">Arizona</option>
-                                <option value="AR">Arkansas</option>
-                                <option value="CA">California</option>
-                                <option value="CO">Colorado</option>
-                                <option value="CT">Connecticut</option>
-                                <option value="DE">Delaware</option>
-                                <option value="DC">District Of Columbia</option>
-                                <option value="FL">Florida</option>
-                                <option value="GA">Georgia</option>
-                                <option value="HI">Hawaii</option>
-                                <option value="ID">Idaho</option>
-                                <option value="IL">Illinois</option>
-                                <option value="IN">Indiana</option>
-                                <option value="IA">Iowa</option>
-                                <option value="KS">Kansas</option>
-                                <option value="KY">Kentucky</option>
-                                <option value="LA">Louisiana</option>
-                                <option value="ME">Maine</option>
-                                <option value="MD">Maryland</option>
-                                <option value="MA">Massachusetts</option>
-                                <option value="MI">Michigan</option>
-                                <option value="MN">Minnesota</option>
-                                <option value="MS">Mississippi</option>
-                                <option value="MO">Missouri</option>
-                                <option value="MT">Montana</option>
-                                <option value="NE">Nebraska</option>
-                                <option value="NV">Nevada</option>
-                                <option value="NH">New Hampshire</option>
-                                <option value="NJ">New Jersey</option>
-                                <option value="NM">New Mexico</option>
-                                <option value="NY">New York</option>
-                                <option value="NC">North Carolina</option>
-                                <option value="ND">North Dakota</option>
-                                <option value="OH">Ohio</option>
-                                <option value="OK">Oklahoma</option>
-                                <option value="OR">Oregon</option>
-                                <option value="PA">Pennsylvania</option>
-                                <option value="RI">Rhode Island</option>
-                                <option value="SC">South Carolina</option>
-                                <option value="SD">South Dakota</option>
-                                <option value="TN">Tennessee</option>
-                                <option value="TX">Texas</option>
-                                <option value="UT">Utah</option>
-                                <option value="VT">Vermont</option>
-                                <option value="VA">Virginia</option>
-                                <option value="WA">Washington</option>
-                                <option value="WV">West Virginia</option>
-                                <option value="WI">Wisconsin</option>
-                                <option value="WY">Wyoming</option>
-                            </select>	
-                        </div>
-                        <div class="col-12 mb-10 form-group">
-                            <input type="text" name="zip_code" id="zip_code" class="form-control" placeholder="Zip Code" required value="">
-                        </div>
-                        <div class="col-12 mb-10 form-group">
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Email" required value="">
-                        </div>
-                        <div class="col-12 mb-10 form-group">
-                            <textarea rows="3" name="tellus" id="tellus" class="form-control" placeholder="Tell us about your case" required></textarea>
-                        </div>
-                        <div class="col-12">
-                            <p>By submitting this information, you agree to our Terms & Conditions and that Legal Injury Advocates and its partner law firms may contact you about their services at your above phone number(s)  even if it is on a National or State Do Not Call List. Calls/texts may employ automated dialing technology and pre-recorded/artificial voice messages. I understand my consent is not a condition of any purchase.</p>
-                        </div>
-                        <div class="col-12 form-group">
-                            <button type="submit" class="btn btn-success" id="btnsubmit">Submit Claim Request</button>
-                        </div>
-                        <div id="msgdiv" style="margin-top:10px;display:none;"></div>
+                        <select class="form-control" required id="state" name="state">
+                            <option value="">Select State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>	
+                    </div>-->
+                    <div class="col-12 mb-10 form-group">
+                        <input type="text" name="zip_code" id="zip_code" class="form-control" placeholder="Zip Code" required value="">
                     </div>
-                    <img src="img/icon.png" alt="icon" class="text-center finalIcon">
-                    <div class="formFooter">
+                    <div class="col-12 mb-10 form-group">
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" required value="">
+                    </div>
+                    <div class="col-12 mb-10 form-group">
+                        <textarea rows="3" name="tellus" id="tellus" class="form-control" placeholder="Tell us about your case" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <p>By submitting this information, you agree to our Terms & Conditions and that Legal Injury Advocates and its partner law firms may contact you about their services at your above phone number(s)  even if it is on a National or State Do Not Call List. Calls/texts may employ automated dialing technology and pre-recorded/artificial voice messages. I understand my consent is not a condition of any purchase.</p>
+                    </div>
+                    <div class="col-12 form-group">
+                        <button type="submit" class="btn btn-success" id="btnsubmit">Submit Claim Request</button>
+                    </div>
+                    <div id="msgdiv" style="margin-top:10px;display:none;"></div>
+                </div>
+                <img src="img/icon.png" alt="icon" class="text-center finalIcon">
+                <div class="formFooter">
                     <p>This site is 100% secure and confidential</p>
-                    </div>
+                </div>
 
             </div>
 

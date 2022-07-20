@@ -301,6 +301,100 @@ Route::group(['prefix' => '/1'], function () {
 
 });
 
+Route::group(['prefix' => '/2'], function () {
+
+    Route::get('/', function (\Illuminate\Http\Request $request) {
+        Session::put('cid', $request->get('cid'));
+
+        switch ($request->get('aid'))
+        {
+            case '38': //William Kenny
+                Session::put('lp_campaign_id', '62a785c01de26');
+                Session::put('lp_campaign_key', 'DLmHBNt2PfnTjWhGxdVy');
+                break;
+            case '32': //AW Performance LLC
+                Session::put('lp_campaign_id', '6244ba77c6fac');
+                Session::put('lp_campaign_key', 'YnZ2RpX3GzcxKJ9THVMj');
+                break;
+            case '30': //Slick Ads Media
+                Session::put('lp_campaign_id', '6244b883850b2');
+                Session::put('lp_campaign_key', 'bXDt2fCchpY4LKGkz3jd');
+                break;
+            case '31': //Scale Up Media Agency Inc
+                Session::put('lp_campaign_id', '6244ba459aa52');
+                Session::put('lp_campaign_key', 'd39XrWbJTxzCq4RNvjtM');
+                break;
+            case '8': //FB Moderation
+                Session::put('lp_campaign_id', '5e306b37f0864');
+                Session::put('lp_campaign_key', 'gc6Y7M2FmzDXNQ3yqKdZ');
+                break;
+            case '35': // AdMediary
+                Session::put('lp_campaign_id', '627bd25300744');
+                Session::put('lp_campaign_key', 'yxqFTYvW2LkNBRVmrMjb');
+                break;
+            default:
+                Session::put('lp_campaign_id', env('LEADSPEDIA_CAMPAIGN_ID'));
+                Session::put('lp_campaign_key', env('LEADSPEDIA_CAMPAIGN_KEY'));
+        }
+
+        $phoneNumber = '(800) 484-6757';
+
+        return view('2.index')->with(compact('phoneNumber'));
+    })->name('2.index');
+
+    Route::post('/', function (\Illuminate\Http\Request $request) {
+
+        $cid = Session::get('cid');
+
+        $lpCampaignId = Session::get('lp_campaign_id');
+        $lpCampaignKey = Session::get('lp_campaign_key');
+
+        if($cid==""){
+            $lpCampaignId="62a785c01de26";
+            $lpCampaignKey="DLmHBNt2PfnTjWhGxdVy";
+        }
+
+        $postData = [
+            'diagnosed' => $request->get('diagnosed'),
+            'diagnosed_when' => $request->get('diagnosed_when'),
+            'over_4_years' => $request->get('over_4_years'),
+            'has_attorney' => $request->get('has_attorney'),
+            'first_name' => $request->get('first_name'),
+            'last_name' => $request->get('last_name'),
+            'email_address' => $request->get('email_address'),
+            'zip_code' => $request->get('zip_code'),
+            'notes' => $request->get('notes'),
+            'phone_home' => $request->get('phone_home'),
+            'phone_cell' => $request->get('phone_cell'),
+            'ip_address' => $request->get('ip_address'),
+            'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
+            'lp_campaign_id' => $lpCampaignId,
+            'lp_campaign_key' => $lpCampaignKey,
+            'lp_s1' => $request->get('s1'),
+            'lp_s2' => $request->get('s2'),
+            'lp_s3' => $request->get('s3'),
+            'lp_s4' => $request->get('s4'),
+            'lp_s5' => $request->get('s5'),
+            'path' => '/1'
+        ];
+
+        $guzzle = new \GuzzleHttp\Client();
+
+        //check if qualified lead or not
+
+
+        $request = $guzzle->request('POST', 'https://legalinjurynetwork.leadspediatrack.com/post.do', [
+            'form_params' => $postData
+        ]);
+
+        $response = $request->getBody()->getContents();
+
+        return redirect()->to('/thanks');
+
+    })->name('3.post-lead');
+
+});
+
 Route::group(['prefix' => '/1b'], function () {
 
     Route::get('/', function () {

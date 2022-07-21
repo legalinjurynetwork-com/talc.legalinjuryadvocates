@@ -1,8 +1,3 @@
-@php
-$phone = "(800) 484-6757";
-$tel = "8004846757";
-$year = date("Y");
-@endphp
 <!doctype html>
 <html>
   <head>
@@ -72,6 +67,11 @@ $year = date("Y");
   @endif
   </head>
   <body>
+    @php
+    $phone = "(800) 484-6757";
+    $tel = "8004846757";
+    $year = date("Y");
+    @endphp
     <div class="container alertbar">
       <div class="row">
         <div class="col"></div>
@@ -314,7 +314,7 @@ $year = date("Y");
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="form-group col-12">
+                    <div class="form-group col-12" style="width:100%">
                       <button type="submit" id="" class="btn custombtn2 d-block mx-auto">SUBMIT CLAIM REQUEST!</button><br><br>
                       <center><img src="img/norton.gif" width="198" height="94" alt=""/></center> 
                     </div>

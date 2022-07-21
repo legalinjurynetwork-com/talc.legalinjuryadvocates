@@ -391,7 +391,7 @@ Route::group(['prefix' => '/2'], function () {
 
         return redirect()->to('/thanks');
 
-    })->name('3.post-lead');
+    })->name('2.post-lead');
 
 });
 

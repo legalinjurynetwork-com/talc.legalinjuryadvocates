@@ -375,7 +375,7 @@ Route::group(['prefix' => '/2'], function () {
             'lp_s3' => $request->get('s3'),
             'lp_s4' => $request->get('s4'),
             'lp_s5' => $request->get('s5'),
-            'path' => '/1'
+            'path' => '/2'
         ];
 
         $guzzle = new \GuzzleHttp\Client();

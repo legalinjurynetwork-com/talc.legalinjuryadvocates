@@ -20,7 +20,7 @@ Route::post('1b', "AllController@oneBPostLead");
 Route::get('1c', "AllController@oneCIndex");
 Route::post('1c', "AllController@oneCPostLead");
 
-Route::get('abcd', "AllController@twoIndex")->name("2.index");
+Route::get('abcd', "AllController@twoIndex");//->name("2.index");
 Route::post('2', "AllController@twoPostLead")->name("2.post-lead");
 
 Route::get('3', "AllController@threeIndex")->name("3.index");

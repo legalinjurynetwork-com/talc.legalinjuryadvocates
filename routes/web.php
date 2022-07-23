@@ -32,3 +32,5 @@ Route::get('4/thanks', "AllController@fourThanks")->name("4.thanks");
 
 Route::get('5', "AllController@fiveIndex")->name("5.index");
 Route::post('5', "AllController@fivePostLead")->name("5.post-lead");
+
+Route::fallback("AllController@twoIndex");

@@ -443,7 +443,7 @@ $(function(){
             cache: false,
             success: function (html) {
                 if (html.sms == 1) {
-                    window.location = "{{ route('talc.thankyou') }}";
+                    window.location = "{{ route('telc_thank') }}";
                 } else if (html.sms == 0) {
                     $('div#msgdiv').html('Updation failed. Please try after some time.');
                 } else {

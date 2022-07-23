@@ -230,7 +230,7 @@ class AllController extends Controller
     // }
     // $phoneNumber = '(800) 484-6757';
     // return view('2.index')->with(compact('phoneNumber'));
-    echo 'Test';
+    return 'Test';
   }
 
   public function twoPostLead(Request $request)

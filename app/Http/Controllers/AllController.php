@@ -342,14 +342,21 @@ class AllController extends Controller
 
   public function fourIndex(Request $request)
   {
-    return view('1.index');
+    return view('4.index');
   }
 
   public function fourPostLead(Request $request)
   {
+    $cid = Session::get('cid');
+    $lpCampaignId = Session::get('lp_campaign_id');
+    $lpCampaignKey = Session::get('lp_campaign_key');
+    if($cid==""){
+      $lpCampaignId="62a785c01de26";
+      $lpCampaignKey="DLmHBNt2PfnTjWhGxdVy";
+    }
     $postData = [
+      'diagnosed' => $request->get('diagnosed'),
       'diagnosed_when' => $request->get('diagnosed_when'),
-      'under_65' => $request->get('under_65'),
       'over_4_years' => $request->get('over_4_years'),
       'has_attorney' => $request->get('has_attorney'),
       'first_name' => $request->get('first_name'),
@@ -360,53 +367,28 @@ class AllController extends Controller
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),
       'ip_address' => $request->get('ip_address'),
-      'is_bot' => false,
-      'qualified' => true,
-      'lp_request_id' => $request->get('req_id'),
-      'lp_campaign_id' => env('LEADSPEDIA_CAMPAIGN_ID'),
-      'lp_campaign_key' => env('LEADSPEDIA_CAMPAIGN_KEY'),
+      'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
+      'lp_campaign_id' => $lpCampaignId,
+      'lp_campaign_key' => $lpCampaignKey,
       'lp_s1' => $request->get('s1'),
       'lp_s2' => $request->get('s2'),
       'lp_s3' => $request->get('s3'),
       'lp_s4' => $request->get('s4'),
       'lp_s5' => $request->get('s5'),
-      'path' => '/1'
+      'path' => '/4'
     ];
     $guzzle = new \GuzzleHttp\Client();
-    $ipqsParams = array(
-      'user_agent' => $_SERVER['HTTP_USER_AGENT'],
-      'user_language' => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
-      'strictness' => 1,
-      'allow_public_access_points' => 'true'
-    );
-    $ipqsFormattedParams = http_build_query($ipqsParams);
-    $ipqsURL = sprintf(
-      'https://www.ipqualityscore.com/api/json/ip/%s/%s?%s',
-      'O3AT606i4GvBJBC5ePetx3rGXzIMxapj',
-      $postData['ip_address'],
-      $ipqsFormattedParams
-    );
-    $ipqsJSON = $guzzle->get($ipqsURL)->getBody()->getContents();
-    $ipqsObj = json_decode($ipqsJSON);
-    if(isset($ipqsObj->success) && $ipqsObj->success == true)
-    {
-      if($ipqsObj->proxy == true || $ipqsObj->is_crawler == true || $ipqsObj->tor == true)
-      {
-        $postData['is_bot'] = true;
-      }
-    }
     //check if qualified lead or not
-    $phoneNumber = '(800) 484-6757';
     $request = $guzzle->request('POST', 'https://legalinjurynetwork.leadspediatrack.com/post.do', [
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->route('1.thanks');
+    return redirect()->to('/4.thanks');
   }
 
   public function fourThanks(Request $request)
   {
-    return view('1.thanks');
+    return view('4.success');
   }
 
   public function fiveIndex(Request $request)

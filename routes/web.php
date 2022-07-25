@@ -27,7 +27,7 @@ Route::get('3', "AllController@threeIndex")->name("3.index");
 Route::post('3', "AllController@threePostLead")->name("3.post-lead");
 
 Route::get('4', "AllController@fourIndex")->name("4.index");
-Route::post('4', "AllController@fourPostLead")->name("1.post-lead");
+Route::post('4', "AllController@fourPostLead")->name("4.post-lead");
 Route::get('4/thanks', "AllController@fourThanks")->name("4.thanks");
 
 Route::get('5', "AllController@fiveIndex")->name("5.index");

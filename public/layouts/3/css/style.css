@@ -70,12 +70,12 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
+    content: "";
 }
 
 blockquote,
 q {
-    quotes: """";
+    quotes: "" "";
 }
 
 a img {
@@ -125,7 +125,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield !important;
 }
 
@@ -147,8 +147,8 @@ body {
     color: #000;
     font-size: 14px;
     line-height: 20px;
-    background: #E6E9EB;
-    font-family: 'Roboto', sans-serif;
+    background: #e6e9eb;
+    font-family: "Roboto", sans-serif;
 }
 
 .page-wrapper {
@@ -166,7 +166,7 @@ body {
 .section-wrapper .section-header {
     text-align: center;
     padding-bottom: 21px;
-    border-bottom: solid 1px rgba(63, 65, 69, 0.10);
+    border-bottom: solid 1px rgba(63, 65, 69, 0.1);
 }
 
 .section-header .logo {
@@ -190,7 +190,7 @@ body {
 }
 
 .section-info {
-    border-bottom: solid 1px rgba(63, 65, 69, 0.10);
+    border-bottom: solid 1px rgba(63, 65, 69, 0.1);
     background: url(../images/talc-bg.jpg) center center no-repeat;
     background-size: cover;
     margin: 0 -20px;
@@ -278,7 +278,7 @@ body {
 
 .si-lists ul li:before {
     font-family: FontAwesome;
-    color: #8696A0;
+    color: #8696a0;
     /* content: '\f058'; */
     content: "\f0a9";
     font-size: 42px;
@@ -352,7 +352,7 @@ body {
 form.claim-form h6 {
     font-size: 1rem;
     text-align: left;
-    color: #0361AB;
+    color: #0361ab;
     font-weight: 700;
     line-height: 1.5;
     margin: 10px 0;
@@ -364,7 +364,7 @@ form.claim-form .progress {
     border-radius: 10px;
     background-color: #2a3451;
     overflow: hidden;
-    font-size: .75rem;
+    font-size: 0.75rem;
     display: flex;
     max-width: 500px;
     margin: 15px auto;
@@ -382,11 +382,20 @@ form.claim-form .progress .progress-bar {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    transition: width .6s ease;
+    transition: width 0.6s ease;
 }
 
 form.claim-form .progress .progress-bar-striped {
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
     background-size: 1rem 1rem;
 }
 
@@ -434,9 +443,9 @@ form.claim-form .inputGroup input {
     visibility: hidden;
 }
 
-form.claim-form .inputGroup input:checked~label {
+form.claim-form .inputGroup input:checked ~ label {
     color: #fff;
-    border: solid 1px #0361AB;
+    border: solid 1px #0361ab;
     margin: 0;
 }
 
@@ -453,9 +462,9 @@ form.claim-form .inputGroup label {
     transition: color 200ms ease-in;
     overflow: hidden;
     border-radius: 4px;
-    border: solid 1px #7BC1ED;
+    border: solid 1px #7bc1ed;
     background-color: #f9f9f9;
-    box-shadow: 0 0 0 1px #7BC1ED;
+    box-shadow: 0 0 0 1px #7bc1ed;
 }
 
 form.claim-form .inputGroup label::before {
@@ -463,7 +472,7 @@ form.claim-form .inputGroup label::before {
     height: 11px;
     border-radius: 50%;
     content: "";
-    background-color: #0361AB;
+    background-color: #0361ab;
     position: absolute;
     left: 180px;
     top: 50%;
@@ -475,29 +484,28 @@ form.claim-form .inputGroup label::before {
     z-index: -1;
 }
 
-form.claim-form .inputGroup input:checked~label:before {
+form.claim-form .inputGroup input:checked ~ label:before {
     -webkit-transform: translate(0%, 0%) scale3d(100, 100, 1);
     transform: translate(0%, 0%) scale3d(100, 100, 1);
     opacity: 1;
 }
 
-form.claim-form .inputGroup input:checked~label:after {
-    background-color: #3DA600;
-    border-color: #2F7F00;
+form.claim-form .inputGroup input:checked ~ label:after {
+    background-color: #3da600;
+    border-color: #2f7f00;
 }
 
-form.claim-form .inputGroup input:checked~label.error-no:after {
-    background-color: #CF0000 !important;
+form.claim-form .inputGroup input:checked ~ label.error-no:after {
+    background-color: #cf0000 !important;
     border-color: #890000 !important;
 }
-
 
 form.claim-form .inputGroup label::after {
     width: 20px;
     height: 20px;
     content: "";
     border: 1px solid rgba(144, 144, 144, 0.75);
-    background-color: rgba(144, 144, 144, .5);
+    background-color: rgba(144, 144, 144, 0.5);
     /* background-image: url(data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E); */
     background-repeat: no-repeat;
     /* background-position: 2px 3px; */
@@ -505,7 +513,7 @@ form.claim-form .inputGroup label::after {
     z-index: 2;
     position: absolute;
     /* right: 30px; */
-    left: .75em;
+    left: 0.75em;
     top: 50%;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -528,8 +536,6 @@ form.claim-form button.form-btn {
     margin: 0 auto 15px;
     cursor: pointer;
 }
-
-
 
 form.claim-form button.form-btn.form-btn-yes {
     background-color: #05bec0;
@@ -564,9 +570,9 @@ form.claim-form .form-group input {
     color: #3c454c;
     font-weight: 400;
     border-radius: 4px;
-    border: solid 1px #7BC1ED;
+    border: solid 1px #7bc1ed;
     background-color: #f9f9f9;
-    box-shadow: 0 0 0 1px #7BC1ED;
+    box-shadow: 0 0 0 1px #7bc1ed;
 }
 .phone_validation {
     display: none;
@@ -583,9 +589,9 @@ form.claim-form .form-group textarea {
     color: #3c454c;
     font-weight: 400;
     border-radius: 4px;
-    border: solid 1px #7BC1ED;
+    border: solid 1px #7bc1ed;
     background-color: #f9f9f9;
-    box-shadow: 0 0 0 1px #7BC1ED;
+    box-shadow: 0 0 0 1px #7bc1ed;
     resize: none;
 }
 
@@ -594,12 +600,12 @@ form.claim-form .form-group textarea::placeholder {
 }
 
 form.claim-form .form-slide {
-    border-top: solid 1px rgba(63, 65, 69, 0.10);
+    border-top: solid 1px rgba(63, 65, 69, 0.1);
     padding: 25px 0 15px;
 }
 
 form.claim-form {
-    border-bottom: solid 1px rgba(63, 65, 69, 0.10);
+    border-bottom: solid 1px rgba(63, 65, 69, 0.1);
 }
 
 form.claim-form .slide-one {
@@ -630,7 +636,6 @@ form.claim-form .slide-six {
 .disease-list button.form-btn {
     font-size: 14px !important;
 }
-
 
 /* checkbox style */
 /* .styled-checkbox {
@@ -684,11 +689,11 @@ form.claim-form .slide-six {
 
 /* checkbox style */
 .footer {
-    margin-top: 100vh;
-    border: .125em solid hsla(0, 0%, 20%, 0.95);
-    background: hsla(0, 0%, 98%, 0.90);
+    margin-top: 1vh;
+    border: 0.125em solid hsla(0, 0%, 20%, 0.95);
+    background: hsla(0, 0%, 98%, 0.9);
     padding: 15px 15px 0;
-    color: hsla(0, 0%, 18%, 1.00);
+    color: hsla(0, 0%, 18%, 1);
 }
 
 .footer-text {
@@ -698,13 +703,13 @@ form.claim-form .slide-six {
 }
 
 .footer-text p {
-    margin: .25em 0;
+    margin: 0.25em 0;
     padding: 0;
     border: 0;
     font-size: 14px;
     line-height: 1.5;
     text-align: left;
-    color: hsla(0, 0%, 18%, 1.00);
+    color: hsla(0, 0%, 18%, 1);
 }
 
 .footer-bottom {
@@ -743,7 +748,6 @@ form.claim-form .slide-six {
     font-weight: 500;
     color: #ffffff;
 }
-
 
 /* contact-us page */
 .section-heading h2 {
@@ -813,7 +817,6 @@ form.claim-form .slide-six {
         margin-bottom: 15px;
     }
 }
-
 
 @media (max-width: 767px) {
     .section-info .si-title {
@@ -918,7 +921,6 @@ form.claim-form .slide-six {
     }
 }
 
-
 @media (max-width: 575px) {
     .si-text h2 {
         font-size: 2em !important;
@@ -1011,13 +1013,12 @@ form.claim-form .slide-six {
     .section-info .si-title {
         margin-bottom: 10px;
     }
-
 }
 
 @media (max-width: 370px) {
     .case-review h5 {
         font-size: 22px;
-        line-height: 28px
+        line-height: 28px;
     }
 
     .free-claim h4 {

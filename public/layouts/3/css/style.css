@@ -689,7 +689,7 @@ form.claim-form .slide-six {
 
 /* checkbox style */
 .footer {
-    margin-top: 1vh;
+    margin-top: 1vh !important;
     border: 0.125em solid hsla(0, 0%, 20%, 0.95);
     background: hsla(0, 0%, 98%, 0.9);
     padding: 15px 15px 0;

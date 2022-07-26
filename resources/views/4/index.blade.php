@@ -2,14 +2,19 @@
 $phone = "(800) 484-6757";
 $tel = "8004846757";
 $year = date("Y");
-@if(str_contains(url(''), 'consumer')
+$url = url('');
+$logo = "";
+$company = "";
+@endphp
+<?php
+if($url == 'consumer'){
     $company = "Consumer Injury Advocate";
     $logo = "img/lin-logo-consumer.png";
-@else
+}else{
     $company = "Legal Injury Advocate";
     $logo = "img/lin-logo.png";
-@endif
-@endphp
+}
+?>
 <!doctype html>
 <html>
   <head>

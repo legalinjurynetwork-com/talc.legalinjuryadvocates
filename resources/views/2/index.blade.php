@@ -163,7 +163,7 @@
               Women who used Johnson & Johnson Baby Powder or Shower to Shower Powder, may be owed a large sum of money..
             </h1>
           </div>
-          <div class="col-lg-10 offset-lg-1 col-sm-12 offset-sm-0 stagecard">
+          <div class="col-lg-10 offset-lg-1 col-sm-12 offset-sm-0 stagecard" id="formTop">
             <div class="col-8 offset-2 text-center">
               <h4>FAST FREE CASE REVIEW</h4>
               <div class="progress" style="height: 30px;">
@@ -176,7 +176,7 @@
                 </div>
               </div>
             </div>
-            <form class="claim-form" method="POST" action="{{ url()->current() }}" id="formTop">
+            <form class="claim-form" method="POST" action="{{ url()->current() }}">
               @csrf
               <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : '' }}">
               <input type="hidden" name="aid" value="{{ isset($_GET['aid']) ? $_GET['aid'] : '' }}">
@@ -470,7 +470,7 @@
             <h1>Fast Free Case Review</h1>
             <p>If you or someone you know has been exposed to talcum powder and has since had developed cancer,
               the time to get financial relief is now.</p>
-            <a href="#top"><button class="btn custombtn2">Do I Qualify?</button></a>
+            <a href="#formTop"><button class="btn custombtn2">Do I Qualify?</button></a>
           </div>
         </div>
       </div>
@@ -478,7 +478,7 @@
     <section class="container footer">
       <div class="row">
         <div class="col-12">
-          <img src="img/lin-logo.png" width="176" height="71" alt="" class="img-fluid" />&nbsp;&nbsp;&nbsp; |
+          <img src="{{$logo}}" width="176" height="71" alt="" class="img-fluid" />&nbsp;&nbsp;&nbsp; |
           &nbsp;&nbsp;&nbsp;<strong><span class="">Call Now: <span class="red"> <a
                           href="tel:<?php echo $tel; ?>"><?php echo $phone; ?></a></span></span></strong>
           <br><br>

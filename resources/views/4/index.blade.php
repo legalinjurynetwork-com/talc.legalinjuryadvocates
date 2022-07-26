@@ -187,7 +187,7 @@ if(str_contains($url, 'consumer')){
                             </div>-->
                         </div>
 
-                        <div class="col-10 offset-1" id="formTop">
+                        <div class="col-10 offset-1" >
                             <h1 class="text-center bigquestion1">Did you, or someone you know, develop cancer after
                                 using talcum powder?</h1>
                             (select all that apply)
@@ -429,7 +429,7 @@ if(str_contains($url, 'consumer')){
                         <h1>Fast Free Case Review</h1>
                         <p>If you or someone you know has been exposed to talcum powder and has since had developed
                             cancer, the time to get financial relief is now.</p>
-                        <a href="#top"><button class="btn custombtn2">Do I Qualify?</button></a>
+                        <a href="javascript:scrollToTop();"><button class="btn custombtn2">Do I Qualify?</button></a>
                     </div>
                 </div>
             </div>
@@ -437,7 +437,7 @@ if(str_contains($url, 'consumer')){
         <section class="container footer">
             <div class="row">
                 <div class="col-12">
-                    <img src="img/lin-logo.png" width="176" height="71" alt="" class="img-fluid" />&nbsp;&nbsp;&nbsp;
+                    <img src="{{$logo}}" width="176" height="71" alt="" class="img-fluid" />&nbsp;&nbsp;&nbsp;
                     | &nbsp;&nbsp;&nbsp;<strong><span class="">Call Now: <span class="red"> <a
                                     href="tel:<?php echo $tel; ?>"><?php echo $phone; ?></a></span></span></strong>
                     <br><br>
@@ -482,10 +482,17 @@ if(str_contains($url, 'consumer')){
                 </div>
             </div>
         </div><br><br>
-        <div class="bottomMenu">Ready for a Fast, Free Case Review? <a href="#formTop"><button
+        <div class="bottomMenu">Ready for a Fast, Free Case Review? <a href="javascript:scrollToTop();"><button
                     class="btn btn-success">Click Here</button></a></div>
     </form>
     <script src="js/jquery.min.js"></script>
+    <script>
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            // window.scrollTo(0, 0);
+        }
+    </script>
     <!-- <script src="/layouts/2/js/custom.js" type="text/javascript"></script> -->
     <script async>
         !function(C,l,i,c,k,a,g,y){(g=l.createElement(c)).onload=g.onreadystatechange=function(){

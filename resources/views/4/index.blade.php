@@ -99,24 +99,24 @@ if(str_contains($url, 'consumer')){
       .bullets ul li{list-style:inherit !important;}
       @media (min-width: 1400px)
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-            max-width: 1320px;
+            max-width: 1320px !important;
         }
         @media (min-width: 1200px)
         .container, .container-lg, .container-md, .container-sm, .container-xl {
-            max-width: 1140px;
+            max-width: 1140px !important;
         }
 
         @media (min-width: 992px)
         .container, .container-lg, .container-md, .container-sm {
-            max-width: 960px;
+            max-width: 960px !important;
         }
         @media (min-width: 768px)
         .container, .container-md, .container-sm {
-            max-width: 720px;
+            max-width: 720px !important;
         }
         @media (min-width: 576px)
         .container, .container-sm {
-            max-width: 540px;
+            max-width: 540px !important;
       }
   </style>
   </head>

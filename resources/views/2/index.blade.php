@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link href="/layouts/3/css/style.css" rel="stylesheet">
+    <!-- <link href="/layouts/3/css/style.css" rel="stylesheet"> -->
 
     <link href="css/2.style.css" rel="stylesheet">
     @if(isset($useXverify) && $useXverify == true)
@@ -95,27 +95,39 @@
       body{background-color: white !important;}
       section.closer p {line-height: 50px !important;}
       .bullets ul li{list-style:inherit !important;}
-      @media (min-width: 1400px)
+      .footer {
+        margin-top: 0px !important;
+        border: none !important;
+        background: transparent !important;
+        padding: 15px 15px 0 !important;
+        color: black !important;
+      }
+      /* @media (min-width: 1400px){
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
             max-width: 1320px !important;
         }
-        @media (min-width: 1200px)
+      }
+        @media (min-width: 1200px){
         .container, .container-lg, .container-md, .container-sm, .container-xl {
             max-width: 1140px !important;
         }
+      }
 
-        @media (min-width: 992px)
+        @media (min-width: 992px){
         .container, .container-lg, .container-md, .container-sm {
             max-width: 960px !important;
         }
-        @media (min-width: 768px)
+      }
+        @media (min-width: 768px){
         .container, .container-md, .container-sm {
             max-width: 720px !important;
         }
-        @media (min-width: 576px)
+      }
+        @media (min-width: 576px){
         .container, .container-sm {
             max-width: 540px !important;
       }
+    } */
   </style>
   </head>
   <body>

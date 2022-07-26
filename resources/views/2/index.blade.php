@@ -128,7 +128,7 @@
     <div class="container logobar">
       <div class="row">
         <div class="col">
-          <img src="{{$logo}}" width="176" height="71" alt="" class="img-fluid" />
+          <img src="{{$logo}}" width="250" height="auto" alt="" class="img-fluid" />
         </div>
         <div class="col my-auto">
           <h4> 

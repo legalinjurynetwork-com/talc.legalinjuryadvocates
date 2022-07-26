@@ -83,7 +83,7 @@
     $company = "";
     @endphp
     <?php
-    if($url == 'consumer'){
+    if(str_contains($url, 'consumer')){
       $company = "Consumer Injury Advocate";
       $logo = "img/lin-logo-consumer.png";
     }else{

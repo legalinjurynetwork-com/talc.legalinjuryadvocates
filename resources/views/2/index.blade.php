@@ -146,7 +146,7 @@
           <h4> 
             <span class="red"> 
               <a href="tel:{{$tel}}">
-                <button class="btn btn-success">{{$phone}}
+                <button class="btn btn-primary">{{$phone}}
                 </button>
               </a>
             </span>

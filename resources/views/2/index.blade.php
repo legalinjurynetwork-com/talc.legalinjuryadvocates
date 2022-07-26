@@ -65,6 +65,25 @@
     </noscript>
     <!-- End Facebook Pixel Code -->
   @endif
+  @php
+    $phone = "(800) 484-6757";
+    $tel = "8004846757";
+    $year = date("Y");
+    $url = url('');
+    $logo = "";
+    $company = "";
+    $style = "<style></style>";
+    @endphp
+    <?php
+    if(str_contains($url, 'consumer')){
+      $company = "Consumer Injury Advocate";
+      $logo = "img/lin-logo-consumer.png";
+      $style = "<style>";
+    }else{
+      $company = "Legal Injury Advocate";
+      $logo = "img/lin-logo.png";
+    }
+    ?>
   <!-- Google Tag Manager -->
   <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -72,25 +91,35 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TPBPPDK');</script> -->
   <!-- End Google Tag Manager -->
+  <style>
+      body{background-color: white !important;}
+      section.closer p {line-height: 50px !important;}
+      .bullets ul li{list-style:inherit !important;}
+      @media (min-width: 1400px)
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 1320px;
+        }
+        @media (min-width: 1200px)
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 1140px;
+        }
+
+        @media (min-width: 992px)
+        .container, .container-lg, .container-md, .container-sm {
+            max-width: 960px;
+        }
+        @media (min-width: 768px)
+        .container, .container-md, .container-sm {
+            max-width: 720px;
+        }
+        @media (min-width: 576px)
+        .container, .container-sm {
+            max-width: 540px;
+      }
+  </style>
   </head>
   <body>
-    @php
-    $phone = "(800) 484-6757";
-    $tel = "8004846757";
-    $year = date("Y");
-    $url = url('');
-    $logo = "";
-    $company = "";
-    @endphp
-    <?php
-    if(str_contains($url, 'consumer')){
-      $company = "Consumer Injury Advocate";
-      $logo = "img/lin-logo-consumer.png";
-    }else{
-      $company = "Legal Injury Advocate";
-      $logo = "img/lin-logo.png";
-    }
-    ?>
+    
     <div class="container alertbar">
       <div class="row">
         <div class="col"></div>

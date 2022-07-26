@@ -93,6 +93,32 @@ if(str_contains($url, 'consumer')){
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-TPBPPDK');</script> -->
     <!-- End Google Tag Manager -->
+    <style>
+      body{background-color: white !important;}
+      section.closer p {line-height: 50px !important;}
+      .bullets ul li{list-style:inherit !important;}
+      @media (min-width: 1400px)
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 1320px;
+        }
+        @media (min-width: 1200px)
+        .container, .container-lg, .container-md, .container-sm, .container-xl {
+            max-width: 1140px;
+        }
+
+        @media (min-width: 992px)
+        .container, .container-lg, .container-md, .container-sm {
+            max-width: 960px;
+        }
+        @media (min-width: 768px)
+        .container, .container-md, .container-sm {
+            max-width: 720px;
+        }
+        @media (min-width: 576px)
+        .container, .container-sm {
+            max-width: 540px;
+      }
+  </style>
   </head>
   <body>
     <form name="basic-form" id="basic-form" class="" action="{{ url()->current() }}" method="post" _lpchecked="1">

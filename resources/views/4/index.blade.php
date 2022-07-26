@@ -2,7 +2,12 @@
 $phone = "(800) 484-6757";
 $tel = "8004846757";
 $year = date("Y");
-$company = "Consumer Injury Advocate";
+if(str_contains(url(''), 'consumer')
+    $company = "Consumer Injury Advocate";
+    $logo = "img/lin-logo-consumer.png";
+else 
+    $company = "Legal Injury Advocate";
+    $logo = "img/lin-logo.png";
 @endphp
 <!doctype html>
 <html>
@@ -113,7 +118,7 @@ $company = "Consumer Injury Advocate";
         <div class="container logobar">
             <div class="row">
                 <div class="col d-block my-auto">
-                    <img src="img/lin-logo.png" width="250" height="auto" alt="" class="img-fluid" />
+                    <img src="{{$logo}}" width="250" height="auto" alt="" class="img-fluid" />
                 </div>
 
                 <div class="col my-auto">

@@ -78,6 +78,12 @@
     $phone = "(800) 484-6757";
     $tel = "8004846757";
     $year = date("Y");
+    if(str_contains(url(''), 'consumer')
+      $company = "Consumer Injury Advocate";
+      $logo = "img/lin-logo-consumer.png";
+  else 
+      $company = "Legal Injury Advocate";
+      $logo = "img/lin-logo.png";
     @endphp
     <div class="container alertbar">
       <div class="row">
@@ -87,7 +93,7 @@
     <div class="container logobar">
       <div class="row">
         <div class="col">
-          <img src="img/lin-logo.png" width="176" height="71" alt="" class="img-fluid" />
+          <img src="{{$logo}}" width="176" height="71" alt="" class="img-fluid" />
         </div>
         <div class="col my-auto">
           <h4> 
@@ -315,7 +321,7 @@
                     <div class="form-group col-12" style="width:100%">
                       <label class="checkbox-inline">
                         <div class="small">
-                          By submitting this information, you agree to our Terms &amp; Conditions and that Legal Injury Advocates and its partner law firms may contact you about their services at your above phone number(s) even if it is on a National or State Do Not Call List.  Calls/texts may employ automated dialing technology and pre-recorded/artificial voice messages.  I understand my consent is not a condition of any purchase.
+                          By submitting this information, you agree to our Terms &amp; Conditions and that {{$company}}s and its partner law firms may contact you about their services at your above phone number(s) even if it is on a National or State Do Not Call List.  Calls/texts may employ automated dialing technology and pre-recorded/artificial voice messages.  I understand my consent is not a condition of any purchase.
                         </div>
                       </label>
                     </div>
@@ -429,18 +435,18 @@
           &nbsp;&nbsp;&nbsp;<strong><span class="">Call Now: <span class="red"> <a
                           href="tel:<?php echo $tel; ?>"><?php echo $phone; ?></a></span></span></strong>
           <br><br>
-          <p>To the extent that this communication is considered ATTORNEY ADVERTISING. Legal Injury Advocates, LLC
+          <p>To the extent that this communication is considered ATTORNEY ADVERTISING. {{$company}}s, LLC
             is responsible for the content of this communication. This communication is designed for general
             informational purposes only and it does NOT constitute the formation of a lawyer-client
-            relationship. Although Legal Injury Advocates aims to provide useful information, this should not be
-            considered legal advice. While we attempt to provide accurate information, Legal Injury Advocates
-            does not warrant that the information is accurate. Legal Injury Advocates disclaims all liability to
+            relationship. Although {{$company}}s aims to provide useful information, this should not be
+            considered legal advice. While we attempt to provide accurate information, {{$company}}s
+            does not warrant that the information is accurate. {{$company}}s disclaims all liability to
             any person for any loss caused by errors or omissions in this collection of information. The hiring
             of a lawyer is an important decision that should not be based solely upon advertisements. NO
             REPRESENTATION IS MADE REGARDING THE POTENTIAL OUTCOME OF ANY SPECIFIC CASE OR THE QUALITY OF LEGAL
             SERVICES BEING BETTER THAN YOU COULD FIND ELSEWHERE. Furthermore, by providing your phone number and
             clicking “Review My Claim” or “Get Your Free Evaluation,” you consent to receive automated calls,
-            emails and text alerts from Legal Injury Advocates and related third parties providing information
+            emails and text alerts from {{$company}}s and related third parties providing information
             about product liability lawsuits, as well as related promotional offers. You agree that Legal Injury
             Advocates and its partner law firms may contact you about their services at the phone number(s) you
             submitted even if it is on a National or State Do Not Call List. Calls/texts may employ automated

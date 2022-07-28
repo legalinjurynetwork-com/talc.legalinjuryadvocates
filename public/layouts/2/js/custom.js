@@ -5,6 +5,9 @@ $("form.claim-form .slide-one button.custombtn").click(function () {
     $('input[name="diagnosed"]').val(
         this.children[1].innerText.replace("Yes, ", "")
     );
+    $('input[name="diagnosis"]').val(
+        this.children[1].innerText.replace("Yes, ", "")
+    );
     $(".progress-bar").css("width", "50%");
     $(".progress-bar").attr("aria-valuenow", "50");
     $(".progress-bar").text("50%");
@@ -16,8 +19,8 @@ $("form.claim-form .slide-two button.custombtn").click(function () {
     $(".form-slide.slide-three").show();
     var answer =
         this.children[1].innerText.toLowerCase().indexOf("2008") !== -1
-            ? "after 2008"
-            : "before 2008";
+            ? "after 2010"
+            : "before 2010";
     $('input[name="diagnosed_when"]').val(answer);
     $(".progress-bar").css("width", "75%");
     $(".progress-bar").attr("aria-valuenow", "75");
@@ -30,8 +33,8 @@ $("form.claim-form .slide-three button.custombtn").click(function () {
     $(".form-slide.slide-four").show();
     var answer =
         this.children[1].innerText.toLowerCase().indexOf("yes") !== -1
-            ? "true"
-            : "false";
+            ? "yes"
+            : "no";
     $('input[name="under_80"]').val(answer);
     $(".progress-bar").css("width", "95%");
     $(".progress-bar").attr("aria-valuenow", "95");
@@ -45,8 +48,8 @@ $("form.claim-form .slide-four button.custombtn").click(function () {
     $(".form-slide.slide-five").show();
     var answer =
         this.children[1].innerText.toLowerCase().indexOf("yes") !== -1
-            ? "true"
-            : "false";
+            ? "yes"
+            : "no";
     $('input[name="has_attorney"]').val(answer);
     $(".progress-bar").css("width", "99%");
     $(".progress-bar").attr("aria-valuenow", "99");

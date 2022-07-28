@@ -18,7 +18,7 @@ class AllController extends Controller
 
   public function telcIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     switch ($request->get('aid'))
     {
       case '38': //William Kenny
@@ -60,7 +60,7 @@ class AllController extends Controller
 
   public function telcLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $lpCampaignId  = '62d5c98830037';
     $lpCampaignKey = 'JxcV6bPjGM3rHK7k4yf9';
     $postData = [
@@ -119,7 +119,7 @@ class AllController extends Controller
 
   public function oneIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     switch ($request->get('aid'))
     {
       case '38': //William Kenny
@@ -156,7 +156,7 @@ class AllController extends Controller
 
   public function onePostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $lpCampaignId = Session::get('lp_campaign_id');
     $lpCampaignKey = Session::get('lp_campaign_key');
     if($cid==""){
@@ -192,12 +192,12 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/thanks');
+    return redirect()->route('/thanks');
   }
 
   public function twoIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     switch ($request->get('aid'))
     {
       case '38': //William Kenny
@@ -234,7 +234,7 @@ class AllController extends Controller
 
   public function twoPostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $lpCampaignId = Session::get('lp_campaign_id');
     $lpCampaignKey = Session::get('lp_campaign_key');
     if($cid==""){
@@ -270,19 +270,20 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/thanks');
+    // return redirect()->to('/thanks');
+    return redirect()->route('thanks');
   }
 
   public function threeIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     return view('3.index');
   }
 
   public function threePostLead(Request $request)
   {
     Log::info('Hits the post 3 request');
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $aid = $request->get('aid');
     //$campaignId = env('LEADSPEDIA_CAMPAIGN_ID');
     //$campaignKey = env('LEADSPEDIA_CAMPAIGN_KEY');
@@ -339,7 +340,7 @@ class AllController extends Controller
     ]);
     $response = $request->getBody()->getContents();
     Log::info('Request sent and works fine.');
-    return redirect()->to('/thanks');
+    return redirect()->route('thanks');
   }
 
   public function fourIndex(Request $request)
@@ -398,13 +399,13 @@ class AllController extends Controller
 
   public function fiveIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     return view('5.index');
   }
 
   public function fivePostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $aid = $request->get('aid');
     $campaignId = '61244a92a1266';
     $campaignKey = 'yQVTkMLYJh7rGWB9fnz4';
@@ -437,12 +438,12 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/thanks');
+    return redirect()->route('thanks');
   }
 
   public function oneBIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     $phoneNumber = '888-787-0120';
     $useXverify = true;
     return view('3.index')->with(compact('phoneNumber', 'useXverify'));
@@ -450,7 +451,7 @@ class AllController extends Controller
 
   public function oneBPostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $postData = [
       'diagnosed' => $request->get('diagnosed'),
       'diagnosed_when' => $request->get('diagnosed_when'),
@@ -481,19 +482,19 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/thanks');
+    return redirect()->route('thanks');
   }
 
   public function oneCIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
     $useXverify = true;
     return view('3.index')->with(compact('useXverify'));
   }
 
   public function oneCPostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    $cid = $request->get('cid');
     $postData = [
       'diagnosed' => $request->get('diagnosed'),
       'diagnosed_when' => $request->get('diagnosed_when'),
@@ -523,6 +524,6 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/thanks');
+    return redirect()->route('thanks');
   }
 }

@@ -17,74 +17,120 @@ if(str_contains($url, 'consumer')){
 ?>
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Injury Network</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- <link href="/layouts/3/css/style.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/4.style.css" rel="stylesheet">
     @if(isset($useXverify) && $useXverify == true)
-      <link rel="stylesheet" type="text/css"  href="https://www.xverify.com/css/ui_tooltip_style.css"  />
+    <link rel="stylesheet" type="text/css" href="https://www.xverify.com/css/ui_tooltip_style.css" />
     @endif
+    @if($company == "Legal Injury Advocate")
     <script>
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true;
-          j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TPBPPDK');
-      console.log('Testing');
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TPBPPDK');
     </script>
+    @endif
+    @if($company == "Consumer Injury Advocate")
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W7693TS');
+    </script>
+    @endif
     <!-- End Google Tag Manager -->
-    <link rel="stylesheet" type="text/css"  href="https://www.xverify.com/css/ui_tooltip_style.css"  />
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <link rel="stylesheet" type="text/css" href="https://www.xverify.com/css/ui_tooltip_style.css" />
+
     @if(env('FACEBOOK_ACCOUNT_ID', null) !== null)
-      <!-- Facebook Pixel Code -->
-      <script>
-        !function(f,b,e,v,n,t,s){
-          if(f.fbq)return;
-          n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='3.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '3.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '{{ env('FACEBOOK_ACCOUNT_ID') }}');
-            fbq('track', 'PageView');
-      </script>
-      <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{ env('FACEBOOK_ACCOUNT_ID') }}&ev=PageView&noscript=1"/>
-      </noscript>
-      <!-- End Facebook Pixel Code -->
+        fbq('init', '{{ env('
+            FACEBOOK_ACCOUNT_ID ') }}');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id={{ env('FACEBOOK_ACCOUNT_ID') }}&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     @endif
 
     @if(env('FACEBOOK_ACCOUNT_ID_2', null) !== null)
-      <!-- Facebook Pixel Code -->
-      <script>
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='3.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '{{ env('FACEBOOK_ACCOUNT_ID_2') }}');
-          fbq('track', 'PageView');
-      </script>
-      <noscript>
-          <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{ env('FACEBOOK_ACCOUNT_ID_2') }}&ev=PageView&noscript=1"/>
-      </noscript>
-      <!-- End Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '3.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '{{ env('
+            FACEBOOK_ACCOUNT_ID_2 ') }}');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id={{ env('FACEBOOK_ACCOUNT_ID_2') }}&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
     @endif
     <!-- Google Tag Manager -->
     <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -94,17 +140,27 @@ if(str_contains($url, 'consumer')){
     })(window,document,'script','dataLayer','GTM-TPBPPDK');</script> -->
     <!-- End Google Tag Manager -->
     <style>
-      body{background-color: white !important;}
-      section.closer p {line-height: 50px !important;}
-      .bullets ul li{list-style:inherit !important;}
-      .footer {
-        margin-top: 0px !important;
-        border: none !important;
-        background: transparent !important;
-        padding: 15px 15px 0 !important;
-        color: black !important;
-      }
-      /* @media (min-width: 1400px){
+        body {
+            background-color: white !important;
+        }
+
+        section.closer p {
+            line-height: 50px !important;
+        }
+
+        .bullets ul li {
+            list-style: inherit !important;
+        }
+
+        .footer {
+            margin-top: 0px !important;
+            border: none !important;
+            background: transparent !important;
+            padding: 15px 15px 0 !important;
+            color: black !important;
+        }
+
+        /* @media (min-width: 1400px){
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
             max-width: 1320px !important;
         }
@@ -130,29 +186,32 @@ if(str_contains($url, 'consumer')){
             max-width: 540px !important;
       }
     } */
-  </style>
-  </head>
-  <body>
+    </style>
+</head>
+
+<body>
     <form name="basic-form" id="basic-form" class="" action="{{ url()->current() }}" method="post" _lpchecked="1">
-      @csrf
-      <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : '' }}">
-      <input type="hidden" name="aid" value="{{ isset($_GET['aid']) ? $_GET['aid'] : '' }}">
-      <input type="hidden" name="ip_address" value="{{ (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'] }}">
-      <input type="hidden" name="source" value="{{ isset($_GET['source']) ? $_GET['source'] : '' }}">
-      <input type="hidden" name="s1" value="{{ isset($_GET['s1']) ? $_GET['s1'] : '' }}">
-      <input type="hidden" name="s2" value="{{ isset($_GET['s2']) ? $_GET['s2'] : '' }}">
-      <input type="hidden" name="s3" value="{{ isset($_GET['s3']) ? $_GET['s3'] : '' }}">
-      <input type="hidden" name="s4" value="{{ isset($_GET['s4']) ? $_GET['s4'] : '' }}">
-      <input type="hidden" name="s5" value="{{ isset($_GET['s5']) ? $_GET['s5'] : '' }}">
-      <input type="hidden" name="cid" value="{{ isset($_GET['cid']) ? $_GET['cid'] : '' }}">
-      <input type="hidden" name="diagnosed" value="">
-      <input type="hidden" name="diagnosed_when" value="">
-      <input type="hidden" name="under_80" value="">
-      <input type="hidden" name="over_4_years" value="">
-      <!-- <input type="hidden" name="has_attorney" value=""> -->
-      <input type="hidden" name="diagnosis" value="Ovarian Cancer">
-      <input type="hidden" name="3_months" value="Yes">
-      <input type="hidden" name="has_attorney" value="No">
+        @csrf
+        <input type="hidden" name="req_id"
+            value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : isset($_GET['cid']) ? $_GET['cid'] : '' }}">
+        <input type="hidden" name="aid" value="{{ isset($_GET['aid']) ? $_GET['aid'] : '' }}">
+        <input type="hidden" name="ip_address"
+            value="{{ (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'] }}">
+        <input type="hidden" name="source" value="{{ isset($_GET['source']) ? $_GET['source'] : '' }}">
+        <input type="hidden" name="s1" value="{{ isset($_GET['s1']) ? $_GET['s1'] : '' }}">
+        <input type="hidden" name="s2" value="{{ isset($_GET['s2']) ? $_GET['s2'] : '' }}">
+        <input type="hidden" name="s3" value="{{ isset($_GET['s3']) ? $_GET['s3'] : '' }}">
+        <input type="hidden" name="s4" value="{{ isset($_GET['s4']) ? $_GET['s4'] : '' }}">
+        <input type="hidden" name="s5" value="{{ isset($_GET['s5']) ? $_GET['s5'] : '' }}">
+        <input type="hidden" name="cid" value="{{ isset($_GET['cid']) ? $_GET['cid'] : '' }}">
+        <input type="hidden" name="diagnosed" value="">
+        <input type="hidden" name="diagnosed_when" value="">
+        <input type="hidden" name="under_80" value="">
+        <input type="hidden" name="over_4_years" value="">
+        <!-- <input type="hidden" name="has_attorney" value=""> -->
+        <input type="hidden" name="diagnosis" value="">
+        <input type="hidden" name="3_months" value="">
+        <input type="hidden" name="has_attorney" value="">
         <div class="container alertbar">
             <div class="row">
                 <div class="col">
@@ -188,44 +247,45 @@ if(str_contains($url, 'consumer')){
                             </div>-->
                         </div>
 
-                        <div class="col-10 offset-1" >
+                        <div class="col-10 offset-1">
                             <h1 class="text-center bigquestion1">Did you, or someone you know, develop cancer after
                                 using talcum powder?</h1>
                             (select all that apply)
                             <div class="row questions">
-                                <div class="col-md-6 text-center  nopad">
+                                <div class="col-md-6 text-center diagnosis nopad">
                                     <div class="row justify-content-center">
 
                                         <ul class="ks-cboxtags">
                                             <li>
-                                                <input type="checkbox" id="Leukemia" value="Order one"
+                                                <input type="checkbox" id="Leukemia" value="Ovarian Cancer"
                                                     style="position:absolute;">
                                                 <label for="Leukemia">Yes, Ovarian Cancer </label>
                                             </li>
                                             <li>
-                                                <input type="checkbox" id="BreastCancer" value="Order Two">
+                                                <input type="checkbox" id="BreastCancer" value="Fallopian Tube Cancer">
                                                 <label for="BreastCancer">Yes, Fallopian Tube Cancer </label>
                                             </li>
                                             <li>
-                                                <input type="checkbox" id="LiverCancer" value="Order Three">
+                                                <input type="checkbox" id="LiverCancer" value="Mesothelioma">
                                                 <label for="LiverCancer">Yes, Mesothelioma </label>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-md-6 text-center  nopad">
+                                <div class="col-md-6 text-center diagnosis nopad">
                                     <div class="row justify-content-center">
                                         <ul class="ks-cboxtags">
                                             <li>
-                                                <input type="checkbox" id="KidneyCancer" value="Order Seven">
+                                                <input type="checkbox" id="KidneyCancer" value="Peritoneal Cancer">
                                                 <label for="KidneyCancer">Yes, Peritoneal Cancer </label>
                                             </li>
                                             <li>
-                                                <input type="checkbox" id="LungCancer" value="Order Eight">
+                                                <input type="checkbox" id="LungCancer" value="Death from Cancer">
                                                 <label for="LungCancer">Yes, Death from Cancer </label>
                                             </li>
                                             <li>
-                                                <input type="checkbox" id="MyelodysplasticSyndromes" value="Order Nine">
+                                                <input type="checkbox" id="MyelodysplasticSyndromes"
+                                                    value="No / Others">
                                                 <label for="MyelodysplasticSyndromes">No / Others </label>
                                             </li>
                                         </ul>
@@ -233,22 +293,22 @@ if(str_contains($url, 'consumer')){
                                 </div>
                                 <div class="form-group">
                                     <h1 class=" bigquestion3">What year were you diagnosed with cancer?</h1>
-                                    <select class="round">
-                                        <option>Please Select</option>
-                                        <option>2008 - 2022</option>
-                                        <option>2007 or before</option>
+                                    <select class="round diagnosed_when">
+                                        <option value="">Please Select</option>
+                                        <option value="After 2010">2008 - 2022</option>
+                                        <option value="Before 2010">2007 or before</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <h1 class=" bigquestion3">Are you currently under the age of 80?</h1>
-                                    <div class="col-12  nopad">
+                                    <div class="col-12 under_80 nopad">
                                         <div class="row">
                                             <div class="btn-group" role="group" aria-label="age80">
                                                 <input type="radio" class="btn-check" name="age80" id="btncheck1"
-                                                    autocomplete="off">
+                                                    value="yes" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck1">Yes</label>
                                                 <input type="radio" class="btn-check" name="age80" id="btncheck2"
-                                                    autocomplete="off">
+                                                    value="no" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck2">No</label>
                                             </div>
                                         </div>
@@ -256,14 +316,14 @@ if(str_contains($url, 'consumer')){
                                 </div>
                                 <div class="form-group">
                                     <h1 class=" bigquestion3">Do you already have a lawyer representing this claim?</h1>
-                                    <div class="col-12  nopad">
+                                    <div class="col-12 has_attorney nopad">
                                         <div class="row">
                                             <div class="btn-group" role="group" aria-label="legalhelp">
                                                 <input type="radio" class="btn-check" name="legalhelp" id="btncheck3"
-                                                    autocomplete="off">
+                                                    value="yes" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck3">Yes</label>
                                                 <input type="radio" class="btn-check" name="legalhelp" id="btncheck4"
-                                                    autocomplete="off">
+                                                    value="no" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck4">No</label>
                                             </div>
                                         </div>
@@ -287,7 +347,8 @@ if(str_contains($url, 'consumer')){
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-12">
-                                                    <input type="text" class="big phone_us xverify_phone form-control form-control-lg"
+                                                    <input type="text"
+                                                        class="big phone_us xverify_phone form-control form-control-lg"
                                                         name="phone_home" id="phone_home" placeholder="Phone"
                                                         required="">
                                                 </div>
@@ -337,8 +398,8 @@ if(str_contains($url, 'consumer')){
                                                     <button type="submit" id=""
                                                         class="btn custombtn2 d-block mx-auto">SUBMIT CLAIM
                                                         REQUEST!</button><br><br>
-                                                    <center><img src="img/norton.gif" width="198" height="94"
-                                                            alt="" /></center>
+                                                    <center><img src="img/norton.gif" width="198" height="94" alt="" />
+                                                    </center>
                                                 </div>
                                             </div>
                                         </div>
@@ -496,10 +557,17 @@ if(str_contains($url, 'consumer')){
     </script>
     <!-- <script src="/layouts/2/js/custom.js" type="text/javascript"></script> -->
     <script async>
-        !function(C,l,i,c,k,a,g,y){(g=l.createElement(c)).onload=g.onreadystatechange=function(){
-            g.readyState&&!/loaded|complete/.test(g.readyState)||(C[i](a),g.onload=g.onreadystatechange=null)
-        },y=l.getElementsByTagName(c)[0],g.src=k,g.async=1,y.parentNode.insertBefore(g,y)
-        }(window,document,'_initClickagy','script','https://tags.clickagy.com/data.js?rnd=5f11f950c2e11',{"aid":"vffbk82gn13yr","list":"5yuk4l9q4jwx","conv_name":"k9ximaz0u4z","conv_v":"1"});
+        ! function (C, l, i, c, k, a, g, y) {
+            (g = l.createElement(c)).onload = g.onreadystatechange = function () {
+                g.readyState && !/loaded|complete/.test(g.readyState) || (C[i](a), g.onload = g.onreadystatechange =
+                    null)
+            }, y = l.getElementsByTagName(c)[0], g.src = k, g.async = 1, y.parentNode.insertBefore(g, y)
+        }(window, document, '_initClickagy', 'script', 'https://tags.clickagy.com/data.js?rnd=5f11f950c2e11', {
+            "aid": "vffbk82gn13yr",
+            "list": "5yuk4l9q4jwx",
+            "conv_name": "k9ximaz0u4z",
+            "conv_v": "1"
+        });
     </script>
 
     <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery-1.11.1.min.js"></script>
@@ -510,19 +578,23 @@ if(str_contains($url, 'consumer')){
     <script type="text/javascript" src="https://www.xverify.com/js/clients/tbassett4/client.js"></script>
     <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery.xverify.plugin.js"></script>
     <script type="text/javascript">
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function () {
             $.xVerifyService({
-                    services: {
-                        email: {fields: ['xverify_email']},
-                        phone: {field: 'xverify_phone'}
+                services: {
+                    email: {
+                        fields: ['xverify_email']
                     },
-                    submitType: 'onChange'
-                });
+                    phone: {
+                        field: 'xverify_phone'
+                    }
+                },
+                submitType: 'onChange'
+            });
         });
     </script>
     @if(isset($useXverify) && $useXverify == true)
-      <script type="text/javascript" src="https://www.xverify.com/js/clients/tbassett4/client.js"></script>
-      <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery.xverify.plugin.js"></script>
+    <script type="text/javascript" src="https://www.xverify.com/js/clients/tbassett4/client.js"></script>
+    <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery.xverify.plugin.js"></script>
     @endif
     <script>
         $(function () {
@@ -557,10 +629,54 @@ if(str_contains($url, 'consumer')){
             }
         });
 
+        $(".diagnosis").find("input[type='checkbox']").change(function (ev) {
+            console.log(ev.target.checked);
+            let value = $("input[name='diagnosis']").val();
+            let valueArray = [];
+            if (value == "") {
+                valueArray = []
+            } else {
+                valueArray = value.split(',');
+            }
+            if (ev.target.checked) {
+                if (!valueArray.includes(ev.target.value)) {
+                    valueArray.push(ev.target.value);
+                }
+            } else {
+                valueArray.splice(valueArray.indexOf(ev.target.value), 1);
+            };
+            console.log(valueArray);
+            $("input[name='diagnosis']").val(valueArray.toString());
+            $("input[name='diagnosed']").val(valueArray.toString());
+        })
+        $(".under_80").find("input[type='radio']").change(function (ev) {
+            // console.log(ev.target.value);
+            $("input[name='under_80']").val(ev.target.value);
+        })
+        $(".has_attorney").find("input[type='radio']").change(function (ev) {
+            // console.log(ev.target.value);
+            $("input[name='has_attorney']").val(ev.target.value);
+        })
+
+        $(".diagnosed_when").change(function (ev) {
+            $("input[name='diagnosed_when']").val(ev.target.value);
+        })
     </script>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript> -->
     <!-- End Google Tag Manager (noscript) -->
-  </body>
+    @if($company == "Legal Injury Advocate")
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    @endif
+    @if($company == "Consumer Injury Advocate")
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7693TS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    @endif
+</body>
+
 </html>

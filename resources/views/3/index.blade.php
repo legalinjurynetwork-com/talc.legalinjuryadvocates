@@ -106,7 +106,7 @@
 
                 @csrf
 
-                <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : '' }}">
+                <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : isset($_GET['cid']) ? $_GET['cid'] : '' }}">
                 <input type="hidden" name="aid" value="{{ isset($_GET['aid']) ? $_GET['aid'] : '' }}">
 
                 <input type="hidden" name="ip_address" value="{{ (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'] }}">
@@ -117,7 +117,7 @@
                 <input type="hidden" name="s3" value="{{ isset($_GET['s3']) ? $_GET['s3'] : '' }}">
                 <input type="hidden" name="s4" value="{{ isset($_GET['s4']) ? $_GET['s4'] : '' }}">
                 <input type="hidden" name="s5" value="{{ isset($_GET['s5']) ? $_GET['s5'] : '' }}">
-
+                <input type="hidden" name="cid" value="{{ isset($_GET['cid']) ? $_GET['cid'] : '' }}">
                 <input type="hidden" name="diagnosed" value="">
                 <input type="hidden" name="diagnosed_when" value="">
                 <input type="hidden" name="under_65" value="">

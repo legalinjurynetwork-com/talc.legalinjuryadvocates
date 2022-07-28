@@ -5,7 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+    @php
+    $url = url('');
+    @endphp
+    <?php
+    if(str_contains($url, 'consumer')){
+      $cmpn = "Consumer Injury Advocate";
+    }else{
+      $cmpn = "Legal Injury Advocate";
+    }
+    ?>
     <title>Talcum Powder</title>
     <link rel="icon" href="">
 
@@ -17,11 +26,41 @@
     <link href="/layouts/1/sm/css/talc2.49fd75d6a377.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css"  href="https://www.xverify.com/css/ui_tooltip_style.css"  />
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TPBPPDK');</script>
+    @if($cmpn == "Legal Injury Advocate")
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TPBPPDK');
+    </script>
+    @endif
+    @if($cmpn == "Consumer Injury Advocate")
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W7693TS');
+    </script>
+    @endif
     <!-- End Google Tag Manager -->
 </head>
 <body>
@@ -132,8 +171,20 @@
 
 @yield('body_extra')
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+@if($cmpn == "Legal Injury Advocate")
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe>
+</noscript>
+@endif
+@if($cmpn == "Consumer Injury Advocate")
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7693TS" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe>
+</noscript>
+@endif
 <!-- End Google Tag Manager (noscript) -->
 </body>
 </html>

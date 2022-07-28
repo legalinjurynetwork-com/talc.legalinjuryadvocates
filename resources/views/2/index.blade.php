@@ -162,6 +162,9 @@
             padding: 15px 15px 0 !important;
             color: black !important;
         }
+        .form-slide{
+            display: none;
+        }
 
         /* @media (min-width: 1400px){
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -257,7 +260,7 @@
                         <input type="hidden" name="diagnosis" value="Stomach Cancer">
                         <input type="hidden" name="3_months" value="Yes">
                         <input type="hidden" name="has_attorney" value="No">
-                        <div class="col-10 offset-1 form-slide slide-one">
+                        <div class="col-10 offset-1 form-slide slide-one" style="display: block;">
                             <h1 class="text-center bigquestion1">
                                 Did you, or someone you know, develop cancer after using talcum powder?
                             </h1>

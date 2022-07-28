@@ -275,12 +275,14 @@ class AllController extends Controller
 
   public function threeIndex(Request $request)
   {
+    Session::put('cid', $request->get('cid'));
     return view('3.index');
   }
 
   public function threePostLead(Request $request)
   {
     Log::info('Hits the post 3 request');
+    $cid = Session::get('cid');
     $aid = $request->get('aid');
     //$campaignId = env('LEADSPEDIA_CAMPAIGN_ID');
     //$campaignKey = env('LEADSPEDIA_CAMPAIGN_KEY');
@@ -320,7 +322,7 @@ class AllController extends Controller
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),
       'ip_address' => $request->get('ip_address'),
-      //'lp_request_id' => $request->get('req_id'),
+      'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
       'lp_campaign_id' => $campaignId,
       'lp_campaign_key' => $campaignKey,
       'lp_s1' => $request->get('s1'),
@@ -342,6 +344,7 @@ class AllController extends Controller
 
   public function fourIndex(Request $request)
   {
+    Session::put('cid', $request->get('cid'));
     return view('4.index');
   }
 
@@ -393,11 +396,13 @@ class AllController extends Controller
 
   public function fiveIndex(Request $request)
   {
+    Session::put('cid', $request->get('cid'));
     return view('5.index');
   }
 
   public function fivePostLead(Request $request)
   {
+    $cid = Session::get('cid');
     $aid = $request->get('aid');
     $campaignId = '61244a92a1266';
     $campaignKey = 'yQVTkMLYJh7rGWB9fnz4';
@@ -414,7 +419,7 @@ class AllController extends Controller
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),
       'ip_address' => $request->get('ip_address'),
-      //'lp_request_id' => $request->get('req_id'),
+      'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
       'lp_campaign_id' => $campaignId,
       'lp_campaign_key' => $campaignKey,
       'lp_s1' => $request->get('s1'),
@@ -435,6 +440,7 @@ class AllController extends Controller
 
   public function oneBIndex(Request $request)
   {
+    Session::put('cid', $request->get('cid'));
     $phoneNumber = '888-787-0120';
     $useXverify = true;
     return view('3.index')->with(compact('phoneNumber', 'useXverify'));
@@ -442,6 +448,7 @@ class AllController extends Controller
 
   public function oneBPostLead(Request $request)
   {
+    $cid = Session::get('cid');
     $postData = [
       'diagnosed' => $request->get('diagnosed'),
       'diagnosed_when' => $request->get('diagnosed_when'),
@@ -455,7 +462,7 @@ class AllController extends Controller
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),
       'ip_address' => $request->get('ip_address'),
-      'lp_request_id' => $request->get('req_id'),
+      'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
       'lp_campaign_id' => '606f534005f9d',
       'lp_campaign_key' => '6NZzGmQq3HkR7n9CJDp8',
       'lp_s1' => $request->get('s1'),
@@ -477,12 +484,14 @@ class AllController extends Controller
 
   public function oneCIndex(Request $request)
   {
+    Session::put('cid', $request->get('cid'));
     $useXverify = true;
     return view('3.index')->with(compact('useXverify'));
   }
 
   public function oneCPostLead(Request $request)
   {
+    $cid = Session::get('cid');
     $postData = [
       'diagnosed' => $request->get('diagnosed'),
       'diagnosed_when' => $request->get('diagnosed_when'),
@@ -496,7 +505,7 @@ class AllController extends Controller
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),
       'ip_address' => $request->get('ip_address'),
-      'lp_request_id' => $request->get('req_id'),
+      'lp_request_id' => (!empty($cid)) ? $cid : $request->get('req_id'),
       'lp_campaign_id' => '60662c921d025',
       'lp_campaign_key' => '2G39nxc68bVhzqKZmNgX',
       'lp_s1' => $request->get('s1'),

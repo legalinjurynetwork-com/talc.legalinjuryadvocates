@@ -345,7 +345,7 @@ class AllController extends Controller
   public function fourIndex(Request $request)
   {
     // Session::put('cid', $request->get('cid'));
-    $request->session()->put('cid', $request->get('cid'));
+    $cid = $request->session()->put('cid', $request->get('cid'));
     return view('4.index')->with(compact('cid'));
   }
 

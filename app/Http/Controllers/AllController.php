@@ -344,13 +344,15 @@ class AllController extends Controller
 
   public function fourIndex(Request $request)
   {
-    Session::put('cid', $request->get('cid'));
+    // Session::put('cid', $request->get('cid'));
+    $request->session()->put('cid', $request->get('cid'));
     return view('4.index');
   }
 
   public function fourPostLead(Request $request)
   {
-    $cid = Session::get('cid');
+    // $cid = Session::get('cid');
+    $cid = $request->session()->get('cid');
     $lpCampaignId = Session::get('lp_campaign_id');
     $lpCampaignKey = Session::get('lp_campaign_key');
     if($cid==""){
@@ -386,7 +388,7 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->to('/4.thanks');
+    return redirect()->route('/4.thanks');
   }
 
   public function fourThanks(Request $request)

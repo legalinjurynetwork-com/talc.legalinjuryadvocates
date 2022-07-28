@@ -346,7 +346,7 @@ class AllController extends Controller
   {
     // Session::put('cid', $request->get('cid'));
     $request->session()->put('cid', $request->get('cid'));
-    return view('4.index');
+    return view('4.index')->with(compact('cid'));
   }
 
   public function fourPostLead(Request $request)
@@ -388,7 +388,7 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->route('/4.thanks');
+    return redirect()->route('4.thanks');
   }
 
   public function fourThanks(Request $request)

@@ -144,6 +144,7 @@ if(str_contains($url, 'consumer')){
       <input type="hidden" name="s3" value="{{ isset($_GET['s3']) ? $_GET['s3'] : '' }}">
       <input type="hidden" name="s4" value="{{ isset($_GET['s4']) ? $_GET['s4'] : '' }}">
       <input type="hidden" name="s5" value="{{ isset($_GET['s5']) ? $_GET['s5'] : '' }}">
+      <input type="hidden" name="cid" value="{{$cid}}">
       <input type="hidden" name="diagnosed" value="">
       <input type="hidden" name="diagnosed_when" value="">
       <input type="hidden" name="under_80" value="">

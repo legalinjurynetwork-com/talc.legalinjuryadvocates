@@ -69,15 +69,24 @@ $("form.claim-form .slide-four button.custombtn").click(function () {
 //     $(".progress-bar").attr("aria-valuenow", "100");
 //     $(".progress-bar").text("100%");
 // });
-
+var interval = null;
 $("#phone_cell, #phone_home").keyup(function () {
     var firstInput = document.getElementById("phone_cell").value;
     var secondInput = document.getElementById("phone_home").value;
     if (firstInput != secondInput) {
         $("#phone_cell, #phone_home").addClass("not-confirmed");
         $(".phone_validation").fadeIn();
+        if (interval == null)
+            interval = setInterval(() => {
+                console.log("Interval");
+                document
+                    .getElementById("submit")
+                    .setAttribute("disabled", "disabled");
+            }, 500);
     } else if (firstInput === secondInput) {
         $("#phone_cell, #phone_home").removeClass("not-confirmed");
         $(".phone_validation").fadeOut();
+        clearInterval(interval);
+        document.getElementById("submit").removeAttribute("disabled");
     }
 });

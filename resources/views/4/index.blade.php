@@ -159,7 +159,14 @@ if(str_contains($url, 'consumer')){
             padding: 15px 15px 0 !important;
             color: black !important;
         }
+        .not-confirmed {
+            border-color: red !important;
+        }
 
+        .phone_validation{
+            display: none;
+            color: red;
+        }
         /* @media (min-width: 1400px){
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
             max-width: 1320px !important;
@@ -357,6 +364,7 @@ if(str_contains($url, 'consumer')){
                                                         class=" big phone_us form-control form-control-lg"
                                                         name="phone_cell" id="phone_cell" placeholder="Confirm Phone"
                                                         required="">
+                                                    <div class="phone_validation">Phone numbers do not match!</div>
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -395,7 +403,7 @@ if(str_contains($url, 'consumer')){
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-12">
-                                                    <button type="submit" id=""
+                                                    <button type="submit" id="submit"
                                                         class="btn custombtn2 d-block mx-auto">SUBMIT CLAIM
                                                         REQUEST!</button><br><br>
                                                     <center><img src="img/norton.gif" width="198" height="94" alt="" />
@@ -597,6 +605,7 @@ if(str_contains($url, 'consumer')){
     <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery.xverify.plugin.js"></script>
     @endif
     <script>
+        var interval = null;
         $(function () {
             $('.yes').click(function () {
 
@@ -623,9 +632,16 @@ if(str_contains($url, 'consumer')){
             if (firstInput != secondInput) {
                 $("#phone_cell, #phone_home").addClass("not-confirmed");
                 $(".phone_validation").fadeIn();
+                if(interval == null)
+                    interval = setInterval(()=>{
+                        console.log('Interval')
+                        document.getElementById("submit").setAttribute("disabled", "disabled");
+                    }, 500);
             } else if (firstInput === secondInput) {
                 $("#phone_cell, #phone_home").removeClass("not-confirmed");
                 $(".phone_validation").fadeOut();
+                clearInterval(interval);
+                document.getElementById("submit").removeAttribute("disabled");
             }
         });
 

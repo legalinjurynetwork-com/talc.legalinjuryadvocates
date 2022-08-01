@@ -165,7 +165,13 @@
         .form-slide{
             display: none;
         }
-
+        .not-confirmed {
+            border-color: red !important;
+        }
+        .phone_validation{
+            display: none;
+            color: red;
+        }
         /* @media (min-width: 1400px){
         .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
             max-width: 1320px !important;
@@ -426,12 +432,13 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-12" style="width:100%">
-                                        <input type="text" class="big phone_us form-control" name="phone_home"
+                                        <input type="text" class="big phone_us xverify_phone form-control" name="phone_home"
                                             id="phone_home" placeholder="Phone" required="">
                                     </div>
                                     <div class="form-group col-12" style="width:100%">
                                         <input type="text" class=" big phone_us form-control" name="phone_cell"
                                             id="phone_cell" placeholder="Confirm Phone" required="">
+                                        <div class="phone_validation">Phone numbers do not match!</div>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -466,7 +473,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-12" style="width:100%">
-                                        <button type="submit" id="" class="btn custombtn2 d-block mx-auto">SUBMIT CLAIM
+                                        <button type="submit" id="submit" class="btn custombtn2 d-block mx-auto">SUBMIT CLAIM
                                             REQUEST!</button><br><br>
                                         <center><img src="img/norton.gif" width="198" height="94" alt="" /></center>
                                     </div>

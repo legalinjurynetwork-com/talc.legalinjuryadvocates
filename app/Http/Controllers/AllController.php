@@ -246,6 +246,7 @@ class AllController extends Controller
       'diagnosed_when' => $request->get('diagnosed_when'),
       'over_4_years' => $request->get('over_4_years'),
       'has_attorney' => $request->get('has_attorney'),
+      'under_80' => $request->get('under_80'),
       'first_name' => $request->get('first_name'),
       'last_name' => $request->get('last_name'),
       'email_address' => $request->get('email_address'),

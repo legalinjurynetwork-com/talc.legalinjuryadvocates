@@ -33,8 +33,8 @@ $("form.claim-form .slide-three button.custombtn").click(function () {
     $(".form-slide.slide-four").show();
     var answer =
         this.children[1].innerText.toLowerCase().indexOf("yes") !== -1
-            ? "yes"
-            : "no";
+            ? true
+            : false;
     $('input[name="under_80"]').val(answer);
     $(".progress-bar").css("width", "95%");
     $(".progress-bar").attr("aria-valuenow", "95");
@@ -48,8 +48,8 @@ $("form.claim-form .slide-four button.custombtn").click(function () {
     $(".form-slide.slide-five").show();
     var answer =
         this.children[1].innerText.toLowerCase().indexOf("yes") !== -1
-            ? "yes"
-            : "no";
+            ? true
+            : false;
     $('input[name="has_attorney"]').val(answer);
     $(".progress-bar").css("width", "99%");
     $(".progress-bar").attr("aria-valuenow", "99");

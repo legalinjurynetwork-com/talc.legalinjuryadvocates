@@ -369,6 +369,7 @@ class AllController extends Controller
       'last_name' => $request->get('last_name'),
       'email_address' => $request->get('email_address'),
       'zip_code' => $request->get('zip_code'),
+      'under_80' => $request->get('under_80'),
       'notes' => $request->get('notes'),
       'phone_home' => $request->get('phone_home'),
       'phone_cell' => $request->get('phone_cell'),

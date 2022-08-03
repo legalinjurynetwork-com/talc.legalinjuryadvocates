@@ -312,10 +312,10 @@ if(str_contains($url, 'consumer')){
                                         <div class="row">
                                             <div class="btn-group" role="group" aria-label="age80">
                                                 <input type="radio" class="btn-check" name="age80" id="btncheck1"
-                                                    value="yes" autocomplete="off">
+                                                    value="true" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck1">Yes</label>
                                                 <input type="radio" class="btn-check" name="age80" id="btncheck2"
-                                                    value="no" autocomplete="off">
+                                                    value="false" autocomplete="off">
                                                 <label class="btn btn-outline-primary" for="btncheck2">No</label>
                                             </div>
                                         </div>

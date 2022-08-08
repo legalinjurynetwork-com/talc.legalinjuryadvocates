@@ -192,7 +192,8 @@ class AllController extends Controller
       'form_params' => $postData
     ]);
     $response = $request->getBody()->getContents();
-    return redirect()->route('/thanks');
+    // return redirect()->route('/thanks');
+    return redirect()->route('thanks'); 
   }
 
   public function twoIndex(Request $request)

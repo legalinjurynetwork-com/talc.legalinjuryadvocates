@@ -272,7 +272,7 @@ class AllController extends Controller
     ]);
     $response = $request->getBody()->getContents();
     // return redirect()->to('/thanks');
-    return redirect()->route('thanks');
+    return redirect()->route('thanks'); 
   }
 
   public function threeIndex(Request $request)

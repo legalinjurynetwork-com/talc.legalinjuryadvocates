@@ -448,7 +448,7 @@ if(str_contains($url, 'consumer')){
                                             id="zip_code" placeholder="Zip" required="">
                                     </div>
                                     <div class="form-group col-12" style="width:100%">
-                                        <input type="email" class="big xverify_email form-control" name="email_address"
+                                        <input type="email" class="big form-control" name="email_address"
                                             id="email_address" placeholder="Email" required="">
                                     </div>
                                 </div>

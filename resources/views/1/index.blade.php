@@ -119,7 +119,7 @@
                                                         <input type="text" class="big zip_code" name="zip_code" id="zip_code" placeholder="Zip" maxlength="5">
                                                     </div>
                                                     <div class="col-xs-6">
-                                                        <input type="email" class="big xverify_email" name="email_address" id="email_address" placeholder="Email">
+                                                        <input type="email" class="big" name="email_address" id="email_address" placeholder="Email">
                                                     </div>
                                                 </div>
                                             </div>

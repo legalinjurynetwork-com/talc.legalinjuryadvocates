@@ -374,7 +374,7 @@ if(str_contains($url, 'consumer')){
                                                 </div>
                                                 <div class="form-group col-12">
                                                     <input type="email"
-                                                        class="big xverify_email form-control form-control-lg"
+                                                        class="big form-control form-control-lg"
                                                         name="email_address" id="email_address" placeholder="Email"
                                                         required="">
                                                 </div>

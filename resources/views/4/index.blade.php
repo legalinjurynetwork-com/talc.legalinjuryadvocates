@@ -688,16 +688,26 @@ if(str_contains($url, 'consumer')){
         $(".diagnosed_when").change(function (ev) {
             $("input[name='diagnosed_when']").val(ev.target.value);
         })
-        $.ajax({
-            url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=4&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
-            method: "GET",
-            success: function(response){
-                $('.phone_number').text(response.display);
-                $('.phone_number').parents().eq(0).attr('href', 'tel:'+response.number);
-                $('.bottom-phone').text(response.display);
-                $('.bottom-phone').attr('href', 'tel:'+response.number);
-            }
+        $(document).ready(function(){
+            $.ajax({
+                url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=4&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
+                method: "GET",
+                success: function(response){
+                    $('.phone_number').text(response.display);
+                    $('.phone_number').parents().eq(0).attr('href', 'tel:'+response.number);
+                    $('.bottom-phone').text(response.display);
+                    $('.bottom-phone').attr('href', 'tel:'+response.number);
+                }
+            });
+            $('.phone_number').on('click', function(ev){
+                ev.preventDefault();
+                let a = document.createElement('a');
+                a.href = $(this).parents().eq(0).attr('href');
+                console.log(a);
+                a.click();
+            })
         })
+        
     </script>
     <!-- Google Tag Manager (noscript) -->
     <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPBPPDK" height="0" width="0"

@@ -16,7 +16,36 @@
         <script type="text/javascript" src="https://www.xverify.com/js/clients/tbassett4/client.js"></script>
         <script type="text/javascript" src="https://www.xverify.com/sharedjs/jquery.xverify.plugin.js"></script>
     @endif
+    @php
+    $url = url('');
+    @endphp
+    <script>
+            var ipAddr = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+            var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : !empty($_GET['cid']) ? $_GET['cid'] : ''; ?>";
+            <?php
+            if(str_contains($url, 'consumer')){ ?>
+                var campeignId = "62ec2b4e9e400";
+            <?php }else{
+                // $company = "Legal Injury Advocate";
+                // $logo = "img/lin-logo.png";
+            }
+            ?>
+            // var campeignId = "";
+            $(document).ready(function () {
 
+                $.ajax({
+                    url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=3&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
+                    method: "GET",
+                    success: function(response){
+                        // $('.contact-no').text(response.display);
+                        // $('.contact-no').parents().eq(0).attr('href', 'tel:'+response.number);
+                        $('.contact-no').html("CALL NOW: <span>"+response.display+"</span>");
+                        $('.contact-no').attr('href', 'tel:'+response.number);
+                    }
+                })
+
+            });
+        </script>
     <script type="text/javascript">
         $(document).ready(function(){
 
@@ -215,34 +244,5 @@
     </div>
 @endsection
 @section('body_extra')
-@php
-$url = url('');
-@endphp
-<script>
-        var ipAddr = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
-        var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : !empty($_GET['cid']) ? $_GET['cid'] : ''; ?>";
-        <?php
-        if(str_contains($url, 'consumer')){ ?>
-            var campeignId = "62ec2b4e9e400";
-        <?php }else{
-            // $company = "Legal Injury Advocate";
-            // $logo = "img/lin-logo.png";
-        }
-        ?>
-        // var campeignId = "";
-        $(document).ready(function () {
 
-            $.ajax({
-                url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=3&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
-                method: "GET",
-                success: function(response){
-                    // $('.contact-no').text(response.display);
-                    // $('.contact-no').parents().eq(0).attr('href', 'tel:'+response.number);
-                    $('.contact-no').html("CALL NOW: <span>"+response.display+"</span>");
-                    $('.contact-no').attr('href', 'tel:'+response.number);
-                }
-            })
-
-        });
-    </script>
 @endsection

@@ -199,16 +199,16 @@ $url = url('');
                 var answer = this.innerText.toLowerCase().indexOf('yes') !== -1 ? 'true' : 'false';
                 $('input[name="has_attorney"]').val(answer);
             });
-            $.ajax({
-                url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=3&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
-                method: "GET",
-                success: function(response){
-                    // $('.contact-no').text(response.display);
-                    // $('.contact-no').parents().eq(0).attr('href', 'tel:'+response.number);
-                    $('.contact-no').html("CALL NOW: <span>"+response.display+"</span>");
-                    $('.contact-no').attr('href', 'tel:'+response.number);
-                }
-            })
+            // $.ajax({
+            //     url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=3&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
+            //     method: "GET",
+            //     success: function(response){
+            //         // $('.contact-no').text(response.display);
+            //         // $('.contact-no').parents().eq(0).attr('href', 'tel:'+response.number);
+            //         $('.contact-no').html("CALL NOW: <span>"+response.display+"</span>");
+            //         $('.contact-no').attr('href', 'tel:'+response.number);
+            //     }
+            // })
 
         });
     </script>

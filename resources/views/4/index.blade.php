@@ -344,12 +344,12 @@ if(str_contains($url, 'consumer')){
                                                 <div class="form-group col-6">
                                                     <input type="text" class="big form-control form-control-lg"
                                                         name="first_name" id="first_name" placeholder="First Name"
-                                                        required="">
+                                                        required>
                                                 </div>
                                                 <div class="form-group col-6">
                                                     <input type="text" class="big form-control form-control-lg"
                                                         name="last_name" id="last_name" placeholder="Last Name"
-                                                        required="">
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -357,13 +357,13 @@ if(str_contains($url, 'consumer')){
                                                     <input type="text"
                                                         class="big phone_us xverify_phone form-control form-control-lg"
                                                         name="phone_home" id="phone_home" placeholder="Phone"
-                                                        required="">
+                                                        required>
                                                 </div>
                                                 <div class="form-group col-12">
                                                     <input type="text"
                                                         class=" big phone_us form-control form-control-lg"
                                                         name="phone_cell" id="phone_cell" placeholder="Confirm Phone"
-                                                        required="">
+                                                        required>
                                                     <div class="phone_validation">Phone numbers do not match!</div>
                                                 </div>
                                             </div>
@@ -376,7 +376,7 @@ if(str_contains($url, 'consumer')){
                                                     <input type="email"
                                                         class="big form-control form-control-lg"
                                                         name="email_address" id="email_address" placeholder="Email"
-                                                        required="">
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="form-row">

@@ -234,7 +234,7 @@ if(str_contains($url, 'consumer')){
 
                 <div class="col my-auto">
                     <h4> <span class="red"> <a href="tel:<?php echo $tel; ?>"><button
-                                    class="btn btn-primary"><?php echo $phone; ?></button></a></span></h4>
+                                    class="btn btn-primary phone_number"><?php echo $phone; ?></button></a></span></h4>
                 </div>
             </div>
         </div>
@@ -509,7 +509,7 @@ if(str_contains($url, 'consumer')){
                 <div class="col-12">
                     <img src="{{$logo}}" width="176" height="71" alt="" class="img-fluid" />&nbsp;&nbsp;&nbsp;
                     | &nbsp;&nbsp;&nbsp;<strong><span class="">Call Now: <span class="red"> <a
-                                    href="tel:<?php echo $tel; ?>"><?php echo $phone; ?></a></span></span></strong>
+                                   class="bottom-phone" href="tel:<?php echo $tel; ?>"><?php echo $phone; ?></a></span></span></strong>
                     <br><br>
                     <p>To the extent that this communication is considered ATTORNEY ADVERTISING.
                         <?php echo $company; ?>, LLC is responsible for the content of this communication. This
@@ -606,6 +606,17 @@ if(str_contains($url, 'consumer')){
     @endif
     <script>
         var interval = null;
+        var ipAddr = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+        var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : !empty($_GET['cid']) ? $_GET['cid'] : ''; ?>";
+        <?php
+        if(str_contains($url, 'consumer')){ ?>
+            var campeignId = "62e1b5262e9d0";
+        <?php }else{
+            // $company = "Legal Injury Advocate";
+            // $logo = "img/lin-logo.png";
+        }
+        ?>
+        // var campeignId = "62e1b5262e9d0";
         $(function () {
             $('.yes').click(function () {
 
@@ -676,6 +687,16 @@ if(str_contains($url, 'consumer')){
 
         $(".diagnosed_when").change(function (ev) {
             $("input[name='diagnosed_when']").val(ev.target.value);
+        })
+        $.ajax({
+            url: "//track.consumerinjuryadvocate.com/dni/dni.php?lp_public_key=15b5e2e887fd3931965127ecbb70950c&lp_block_id=4&lp_campaign_id="+campeignId+"&ip_address="+ipAddr+"&lp_request_id="+reqId,
+            method: "GET",
+            success: function(response){
+                $('.phone_number').text(response.display);
+                $('.phone_number').parents().eq(0).attr('href', 'tel:'+response.number);
+                $('.bottom-phone').text(response.display);
+                $('.bottom-phone').attr('href', 'tel:'+response.number);
+            }
         })
     </script>
     <!-- Google Tag Manager (noscript) -->

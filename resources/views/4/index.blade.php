@@ -705,6 +705,7 @@ if(str_contains($url, 'consumer')){
                 a.href = $(this).parents().eq(0).attr('href');
                 console.log(a);
                 a.click();
+                a.remove();
             })
         })
         

@@ -607,7 +607,18 @@ if(str_contains($url, 'consumer')){
     <script>
         var interval = null;
         var ipAddr = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
-        var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : !empty($_GET['cid']) ? $_GET['cid'] : ''; ?>";
+        <?php
+        if(!empty($_GET['req_id'])){
+            $campaign = $_GET['req_id'];
+        } else {
+            if(!empty($_GET['cid'])){
+                $campaign = $_GET['cid'];
+            } else {
+                $campaign = '';
+            }
+        }
+        ?>
+        var reqId = "<?php echo $campaign; ?>";
         <?php
         if(str_contains($url, 'consumer')){ ?>
             var campeignId = "62fd69ecd47cb";//"62e1b5262e9d0";

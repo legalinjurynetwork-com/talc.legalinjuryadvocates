@@ -131,7 +131,7 @@
                     <p>You may qualify for compensation!</p>
                 </div>
             </div>
-            <form class="claim-form" method="POST" action="{{ url()->current() }}">
+            <form id="claim-form" class="claim-form" method="POST" action="{{ url()->current() }}">
 
                 @csrf
 

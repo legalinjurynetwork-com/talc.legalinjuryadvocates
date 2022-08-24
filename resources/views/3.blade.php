@@ -173,7 +173,7 @@
             });
     });
     jQuery(document).ready(function($){
-        $(".claim-form").on("submit", function(){
+        $("#claim-form").on("submit", function(){
             $("#after_2003").attr("disabled", "disabled");
         })
     })

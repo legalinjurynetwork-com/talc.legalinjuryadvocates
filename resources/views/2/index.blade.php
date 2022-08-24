@@ -246,7 +246,7 @@ if(str_contains($url, 'consumer')){
                             </div>
                         </div>
                     </div>
-                    <form class="claim-form" method="POST" action="{{ url()->current() }}">
+                    <form id="claim-form" class="claim-form" method="POST" action="{{ url()->current() }}">
                         @csrf
                         <input type="hidden" name="req_id"
                             value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : isset($_GET['cid']) ? $_GET['cid'] : '' }}">
@@ -681,6 +681,9 @@ if(str_contains($url, 'consumer')){
             $("#yes").attr('src', "img/checkup.png");
             $("#no").attr('src', "img/checkdn.png");
         });
+        $("#claim-form").on('submit', function(){
+            $("#submit").attr('disabled', 'disabled');
+        })
     });
     $(document).scroll(function () {
         var y = $(this).scrollTop();

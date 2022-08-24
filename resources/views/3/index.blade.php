@@ -21,7 +21,7 @@
     @endphp
     <script>
             var ipAddr = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
-            var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : !empty($_GET['cid']) ? $_GET['cid'] : ''; ?>";
+            var reqId = "<?php echo !empty($_GET['req_id']) ? $_GET['req_id'] : (!empty($_GET['cid']) ? $_GET['cid'] : ''); ?>";
             <?php
             if(str_contains($url, 'consumer')){ ?>
                 var campeignId = "62ec2b4e9e400";

@@ -246,3 +246,8 @@
 @section('body_extra')
 
 @endsection
+<script>
+    $(".claim-form").on("submit", function(){
+        $("#after_2003").attr("disabled", "disabled");
+    })
+</script>

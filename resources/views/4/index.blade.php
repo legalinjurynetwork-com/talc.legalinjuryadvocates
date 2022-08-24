@@ -718,9 +718,9 @@ if(str_contains($url, 'consumer')){
                 a.click();
                 a.remove();
             })
-            // $("#submit").on('click', function(ev){
-            //     $(this).attr('disabled', 'disabled');
-            // })
+            $("#basic-form").on('submit', function(){
+                $("#submit").attr('disabled', 'disabled');
+            })
         })
         
     </script>

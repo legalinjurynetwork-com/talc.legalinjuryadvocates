@@ -135,7 +135,7 @@
 
                 @csrf
 
-                <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : isset($_GET['cid']) ? $_GET['cid'] : '' }}">
+                <input type="hidden" name="req_id" value="{{ isset($_GET['req_id']) ? $_GET['req_id'] : (isset($_GET['cid']) ? $_GET['cid'] : '') }}">
                 <input type="hidden" name="aid" value="{{ isset($_GET['aid']) ? $_GET['aid'] : '' }}">
 
                 <input type="hidden" name="ip_address" value="{{ (isset($_SERVER['HTTP_CF_CONNECTING_IP'])) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'] }}">

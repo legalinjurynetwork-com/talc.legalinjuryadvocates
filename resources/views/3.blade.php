@@ -172,6 +172,12 @@
                 submitType: 'onChange'
             });
     });
+    jQuery(document).ready(function($){
+        $(".claim-form").on("submit", function(){
+            $("#after_2003").attr("disabled", "disabled");
+        })
+    })
+    
 </script>
 @yield('body_extra')
 <!-- Google Tag Manager (noscript) -->
